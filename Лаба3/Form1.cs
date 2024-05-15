@@ -22,6 +22,8 @@ namespace Лаба3
 
         private string path = "";
         private int count = 0;
+        private int _count = 0;
+        private int _level = 0;
 
         public Form1()
         {
@@ -65,13 +67,18 @@ namespace Лаба3
 
         private void GetRandomMenuItem()
         {
+            int level = new Random().Next(2, 10);
+            if (level >= 3)
+                _level = 3;
+            else
+                _level = level;
             int menuIndex = random.Next(menuStrip1.Items.Count);
 
             firstLevel = menuStrip1.Items[menuIndex] as ToolStripMenuItem;
 
             path += $"{firstLevel.Text} ";
 
-            if (firstLevel != null && firstLevel.DropDownItems.Count > 0)
+            if (firstLevel != null && firstLevel.DropDownItems.Count > 0 && level >= 2)
             {
                 menuIndex = random.Next(firstLevel.DropDownItems.Count);
 
@@ -79,7 +86,7 @@ namespace Лаба3
 
                 path += $"-> {secondLevel.Text} ";
 
-                if (secondLevel != null && secondLevel.DropDownItems.Count > 0)
+                if (secondLevel != null && secondLevel.DropDownItems.Count > 0 && level >= 3)
                 {
                     menuIndex = random.Next(secondLevel.DropDownItems.Count);
 
@@ -92,14 +99,29 @@ namespace Лаба3
 
         private int Hick()
         {
-            return 50 + 150 * (int)Math.Log(3 + 1);
+            return 50 + 150 * (int)Math.Log(_level + 1);
         }
 
         private void CheckingElement(object sender, EventArgs e)
         {
             var item = sender as ToolStripMenuItem;
 
-            if (item.Text == thirdLevel.Text)
+            if (_count == 10)
+            {
+                textBox1.Text += $"\r\n\r\n10 тестов прошло, тест завершен!";
+
+                label1.Text = "Чтобы начать, нажмите на кнопку 'Начать'.";
+
+                menuStrip1.Visible = false;
+                button1.Enabled = true;
+                button2.Enabled = false;
+
+                path = "";
+                firstLevel = null;
+                secondLevel = null;
+                thirdLevel = null;
+            }
+            else if (item.Text == secondLevel.Text && _level == 2)
             {
                 var stopTime = DateTime.Now;
                 var reactions = (stopTime - startTime).TotalMilliseconds;
@@ -111,20 +133,44 @@ namespace Лаба3
                 {
                     textBox1.Text += $"\r\n\r\n{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
                 }
-                
+
+                _count++;
+                path = "";
+                label1.Text = "";
+                firstLevel = null;
+                secondLevel = null;
+                thirdLevel = null;
+
+                button1_Click(sender, e);
+            }
+            else if (item.Text == thirdLevel.Text && _level == 3)
+            {
+                var stopTime = DateTime.Now;
+                var reactions = (stopTime - startTime).TotalMilliseconds;
+                if (count == 1)
+                {
+                    textBox1.Text += $"{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                }
+                else
+                {
+                    textBox1.Text += $"\r\n\r\n{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                }
+
+                _count++;
+                path = "";
+                label1.Text = "";
+                firstLevel = null;
+                secondLevel = null;
+                thirdLevel = null;
+
+                button1_Click(sender, e);
             }
             else
             {
                 MessageBox.Show("Неверный элемент меню!");
             }
 
-            path = "";
-            label1.Text = "";
-            firstLevel = null;
-            secondLevel = null;
-            thirdLevel = null;
-
-            button1_Click(sender, e );
+            
         }
 
         private void i9_Click(object sender, EventArgs e)
@@ -228,6 +274,56 @@ namespace Лаба3
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i5_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i6_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i7_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i13_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i14_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i17_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i18_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i19_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i22_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i23_Click(object sender, EventArgs e)
         {
             CheckingElement(sender, e);
         }

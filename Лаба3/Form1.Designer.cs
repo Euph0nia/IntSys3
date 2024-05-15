@@ -107,6 +107,7 @@
             this.i5.Name = "i5";
             this.i5.Size = new System.Drawing.Size(180, 26);
             this.i5.Text = "Создать";
+            this.i5.Click += new System.EventHandler(this.i5_Click);
             // 
             // i9
             // 
@@ -130,6 +131,7 @@
             this.i6.Name = "i6";
             this.i6.Size = new System.Drawing.Size(180, 26);
             this.i6.Text = "Добавить";
+            this.i6.Click += new System.EventHandler(this.i6_Click);
             // 
             // i11
             // 
@@ -154,6 +156,7 @@
             this.i7.Name = "i7";
             this.i7.Size = new System.Drawing.Size(180, 26);
             this.i7.Text = "Сохранить";
+            this.i7.Click += new System.EventHandler(this.i7_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -193,6 +196,7 @@
             this.i13.Name = "i13";
             this.i13.Size = new System.Drawing.Size(180, 26);
             this.i13.Text = "Вырезать";
+            this.i13.Click += new System.EventHandler(this.i13_Click);
             // 
             // toolStripMenuItem12
             // 
@@ -216,6 +220,7 @@
             this.i14.Name = "i14";
             this.i14.Size = new System.Drawing.Size(180, 26);
             this.i14.Text = "Копировать";
+            this.i14.Click += new System.EventHandler(this.i14_Click);
             // 
             // toolStripMenuItem14
             // 
@@ -249,6 +254,7 @@
             this.i17.Name = "i17";
             this.i17.Size = new System.Drawing.Size(197, 26);
             this.i17.Text = "Журнал ошибок";
+            this.i17.Click += new System.EventHandler(this.i17_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -270,8 +276,9 @@
             this.toolStripMenuItem6,
             this.toolStripMenuItem7});
             this.i18.Name = "i18";
-            this.i18.Size = new System.Drawing.Size(180, 26);
+            this.i18.Size = new System.Drawing.Size(197, 26);
             this.i18.Text = "Терминал";
+            this.i18.Click += new System.EventHandler(this.i18_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -293,8 +300,9 @@
             this.i20,
             this.i21});
             this.i19.Name = "i19";
-            this.i19.Size = new System.Drawing.Size(180, 26);
+            this.i19.Size = new System.Drawing.Size(197, 26);
             this.i19.Text = "Консоль";
+            this.i19.Click += new System.EventHandler(this.i19_Click);
             // 
             // i20
             // 
@@ -327,6 +335,7 @@
             this.i22.Name = "i22";
             this.i22.Size = new System.Drawing.Size(257, 26);
             this.i22.Text = "Документация";
+            this.i22.Click += new System.EventHandler(this.i22_Click);
             // 
             // toolStripMenuItem8
             // 
@@ -350,6 +359,7 @@
             this.i23.Name = "i23";
             this.i23.Size = new System.Drawing.Size(257, 26);
             this.i23.Text = "Советы и рекомендации";
+            this.i23.Click += new System.EventHandler(this.i23_Click);
             // 
             // toolStripMenuItem10
             // 
@@ -381,7 +391,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(370, 155);
+            this.button1.Location = new System.Drawing.Point(6, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 50);
             this.button1.TabIndex = 2;
@@ -393,7 +403,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(370, 318);
+            this.button2.Location = new System.Drawing.Point(370, 36);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 50);
             this.button2.TabIndex = 3;
@@ -419,7 +429,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(358, 213);
+            this.textBox1.Size = new System.Drawing.Size(479, 213);
             this.textBox1.TabIndex = 7;
             // 
             // Form1

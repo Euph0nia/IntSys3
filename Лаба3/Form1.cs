@@ -47,6 +47,7 @@ namespace Лаба3
             GetRandomMenuItem();
             count++;
             label1.Text = path;
+            _count = 0;
 
             startTime = DateTime.Now;
         }
@@ -261,6 +262,7 @@ namespace Лаба3
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
         {
             CheckingElement(sender, e);
+
         }
 
         private void toolStripMenuItem9_Click(object sender, EventArgs e)

@@ -105,7 +105,7 @@
             this.i9,
             this.i10});
             this.i5.Name = "i5";
-            this.i5.Size = new System.Drawing.Size(180, 26);
+            this.i5.Size = new System.Drawing.Size(156, 26);
             this.i5.Text = "Создать";
             this.i5.Click += new System.EventHandler(this.i5_Click);
             // 
@@ -129,7 +129,7 @@
             this.i11,
             this.i12});
             this.i6.Name = "i6";
-            this.i6.Size = new System.Drawing.Size(180, 26);
+            this.i6.Size = new System.Drawing.Size(156, 26);
             this.i6.Text = "Добавить";
             this.i6.Click += new System.EventHandler(this.i6_Click);
             // 
@@ -154,7 +154,7 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.i7.Name = "i7";
-            this.i7.Size = new System.Drawing.Size(180, 26);
+            this.i7.Size = new System.Drawing.Size(156, 26);
             this.i7.Text = "Сохранить";
             this.i7.Click += new System.EventHandler(this.i7_Click);
             // 
@@ -194,7 +194,7 @@
             this.toolStripMenuItem12,
             this.toolStripMenuItem13});
             this.i13.Name = "i13";
-            this.i13.Size = new System.Drawing.Size(180, 26);
+            this.i13.Size = new System.Drawing.Size(165, 26);
             this.i13.Text = "Вырезать";
             this.i13.Click += new System.EventHandler(this.i13_Click);
             // 
@@ -218,7 +218,7 @@
             this.toolStripMenuItem14,
             this.toolStripMenuItem15});
             this.i14.Name = "i14";
-            this.i14.Size = new System.Drawing.Size(180, 26);
+            this.i14.Size = new System.Drawing.Size(165, 26);
             this.i14.Text = "Копировать";
             this.i14.Click += new System.EventHandler(this.i14_Click);
             // 
@@ -340,14 +340,14 @@
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(247, 26);
-            this.toolStripMenuItem8.Text = "Основная информация";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(185, 26);
+            this.toolStripMenuItem8.Text = "Справочник";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(247, 26);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(185, 26);
             this.toolStripMenuItem9.Text = "О программе...";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IntSys3;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -122,49 +123,63 @@ namespace Лаба3
                 secondLevel = null;
                 thirdLevel = null;
             }
-            else if (item.Text == secondLevel.Text && _level == 2)
+            else if (_level == 2 && secondLevel.Text != null)
             {
-                var stopTime = DateTime.Now;
-                var reactions = (stopTime - startTime).TotalMilliseconds;
-                if (count == 1)
+                if (item.Text == secondLevel.Text)
                 {
-                    textBox1.Text += $"{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    var stopTime = DateTime.Now;
+                    var reactions = (stopTime - startTime).TotalMilliseconds;
+                    if (count == 1)
+                    {
+                        textBox1.Text += $"{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    }
+                    else
+                    {
+                        textBox1.Text += $"\r\n\r\n{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    }
+
+                    _count++;
+                    path = "";
+                    label1.Text = "";
+                    firstLevel = null;
+                    secondLevel = null;
+                    thirdLevel = null;
+
+                    button1_Click(sender, e);
                 }
                 else
                 {
-                    textBox1.Text += $"\r\n\r\n{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    MessageBox.Show("Неверный элемент меню!");
                 }
-
-                _count++;
-                path = "";
-                label1.Text = "";
-                firstLevel = null;
-                secondLevel = null;
-                thirdLevel = null;
-
-                button1_Click(sender, e);
             }
-            else if (item.Text == thirdLevel.Text && _level == 3)
+            else if (_level == 3 && thirdLevel.Text != null)
             {
-                var stopTime = DateTime.Now;
-                var reactions = (stopTime - startTime).TotalMilliseconds;
-                if (count == 1)
+                if (item.Text == thirdLevel.Text)
                 {
-                    textBox1.Text += $"{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    var stopTime = DateTime.Now;
+                    var reactions = (stopTime - startTime).TotalMilliseconds;
+                    if (count == 1)
+                    {
+                        textBox1.Text += $"{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    }
+                    else
+                    {
+                        textBox1.Text += $"\r\n\r\n{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    }
+
+                    _count++;
+                    path = "";
+                    label1.Text = "";
+                    firstLevel = null;
+                    secondLevel = null;
+                    thirdLevel = null;
+
+                    button1_Click(sender, e);
                 }
                 else
                 {
-                    textBox1.Text += $"\r\n\r\n{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    MessageBox.Show("Неверный элемент меню!");
                 }
-
-                _count++;
-                path = "";
-                label1.Text = "";
-                firstLevel = null;
-                secondLevel = null;
-                thirdLevel = null;
-
-                button1_Click(sender, e);
             }
             else
             {
@@ -262,7 +277,8 @@ namespace Лаба3
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
         {
             CheckingElement(sender, e);
-
+            Form2 newForm = new Form2();
+            newForm.Show();
         }
 
         private void toolStripMenuItem9_Click(object sender, EventArgs e)

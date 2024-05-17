@@ -208,7 +208,9 @@ namespace IntSys3
         // Находим вхождение сивмволов в слове
         static bool ContainsSubstring(string word, string requiredChars)
         {
-            return word.Contains(requiredChars.ToLower());
+            if (word[0] == requiredChars[0])
+                return word.Contains(requiredChars.ToLower());
+            else return false;
         }
 
         // Подкрашиваем слово

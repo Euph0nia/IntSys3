@@ -35,7 +35,7 @@ namespace Лаба3
             menuStrip1.Visible = false;
             button2.Enabled = false;
 
-            label1.Text = "Нажмите на кнопку 'Начать'.";
+            label1.Text = "Нажмите на кнопку Начать.";
             textBox1.Text = "";
         }
 
@@ -69,18 +69,20 @@ namespace Лаба3
 
         private void GetRandomMenuItem()
         {
-            int level = new Random().Next(2, 10);
-            if (level >= 3)
+            int level = new Random().Next(1, 10);
+            if (level <= 3)
+                _level = 1;
+            else if (level >= 7)
                 _level = 3;
-            else
-                _level = level;
+            else if (level > 3 && level < 7)
+                _level = 2;
             int menuIndex = random.Next(menuStrip1.Items.Count);
 
             firstLevel = menuStrip1.Items[menuIndex] as ToolStripMenuItem;
 
             path += $"{firstLevel.Text} ";
 
-            if (firstLevel != null && firstLevel.DropDownItems.Count > 0 && level >= 2)
+            if (firstLevel != null && firstLevel.DropDownItems.Count > 0 && _level >= 2)
             {
                 menuIndex = random.Next(firstLevel.DropDownItems.Count);
 
@@ -88,7 +90,7 @@ namespace Лаба3
 
                 path += $"-> {secondLevel.Text} ";
 
-                if (secondLevel != null && secondLevel.DropDownItems.Count > 0 && level >= 3)
+                if (secondLevel != null && secondLevel.DropDownItems.Count > 0 && _level >= 3)
                 {
                     menuIndex = random.Next(secondLevel.DropDownItems.Count);
 
@@ -99,9 +101,9 @@ namespace Лаба3
             }
         }
 
-        private int Hick()
+        private float Hick()
         {
-            return 50 + 150 * (int)Math.Log(_level + 1);
+            return 50 + 150 * (float)Math.Log(_level + 1);
         }
 
         private void CheckingElement(object sender, EventArgs e)
@@ -118,10 +120,42 @@ namespace Лаба3
                 button1.Enabled = true;
                 button2.Enabled = false;
 
+                count = 0;
+                _count = 0;
+
                 path = "";
                 firstLevel = null;
                 secondLevel = null;
                 thirdLevel = null;
+            }
+            else if (_level == 1)
+            {
+                if (item.Text == firstLevel.Text)
+                {
+                    var stopTime = DateTime.Now;
+                    var reactions = (stopTime - startTime).TotalMilliseconds;
+                    if (count == 1)
+                    {
+                        textBox1.Text += $"{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    }
+                    else
+                    {
+                        textBox1.Text += $"\r\n\r\n{count}. Время реакции: {(int)reactions} мс. \r\n    Время по формуле Хика: {Hick()}";
+                    }
+
+                    _count++;
+                    path = "";
+                    label1.Text = "";
+                    firstLevel = null;
+                    secondLevel = null;
+                    thirdLevel = null;
+
+                    button1_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Неверный элемент меню!");
+                }
             }
             else if (_level == 2 && secondLevel.Text != null)
             {
@@ -342,6 +376,26 @@ namespace Лаба3
         }
 
         private void i23_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i1_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i2_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i3_Click(object sender, EventArgs e)
+        {
+            CheckingElement(sender, e);
+        }
+
+        private void i4_Click(object sender, EventArgs e)
         {
             CheckingElement(sender, e);
         }

@@ -98,6 +98,7 @@
             this.i1.Name = "i1";
             this.i1.Size = new System.Drawing.Size(59, 25);
             this.i1.Text = "Файл";
+            this.i1.Click += new System.EventHandler(this.i1_Click);
             // 
             // i5
             // 
@@ -187,6 +188,7 @@
             this.i2.Name = "i2";
             this.i2.Size = new System.Drawing.Size(74, 25);
             this.i2.Text = "Правка";
+            this.i2.Click += new System.EventHandler(this.i2_Click);
             // 
             // i13
             // 
@@ -245,6 +247,7 @@
             this.i3.Name = "i3";
             this.i3.Size = new System.Drawing.Size(49, 25);
             this.i3.Text = "Вид";
+            this.i3.Click += new System.EventHandler(this.i3_Click);
             // 
             // i17
             // 
@@ -326,6 +329,7 @@
             this.i4.Name = "i4";
             this.i4.Size = new System.Drawing.Size(82, 25);
             this.i4.Text = "Справка";
+            this.i4.Click += new System.EventHandler(this.i4_Click);
             // 
             // i22
             // 
@@ -401,7 +405,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.BackColor = System.Drawing.Color.LightCoral;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(370, 36);
             this.button2.Name = "button2";
